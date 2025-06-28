@@ -28,6 +28,6 @@ export class FlightsComponent implements OnInit {
   }
 
   viewDetails(flightId: number) {
-    this.router.navigate(['/flights', flightId]);
+    this.router.navigate(['/flights-details', flightId]);
   }
 }

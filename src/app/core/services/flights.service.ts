@@ -1,6 +1,6 @@
 import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { catchError, Observable, throwError } from 'rxjs';
+import { catchError, map, Observable, throwError } from 'rxjs';
 import { Flight } from '../../features/components/models/flight.model';
 import { environment } from '../../../environment/environment';
 
@@ -21,11 +21,21 @@ export class FlightsService {
   }
 
   getFlightById(id: number): Observable<Flight> {
-    return this.http.get<Flight>(`${this.baseUrl}/${id}`).pipe(
-      catchError(error => {
-        console.error(`Error al obtener vuelo con ID ${id}`, error);
-        return throwError(() => new Error('No se pudo obtener el vuelo.'));
+    return this.http
+      .get<Flight[]>(`${this.baseUrl}`, {
+        params: { id },
       })
-    );
+      .pipe(
+        map(flights => {
+          if (flights.length === 0) {
+            throw new Error('Vuelo no encontrado');
+          }
+          return flights[0];
+        }),
+        catchError(error => {
+          console.error('Error al buscar vuelo:', error);
+          return throwError(() => new Error('No se pudo obtener el vuelo.'));
+        })
+      );
   }
 }

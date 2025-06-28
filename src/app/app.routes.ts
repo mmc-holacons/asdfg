@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './features/components/home/home.component';
 import { FlightsComponent } from './features/components/flights/flights.component';
 import { IncidenceComponent } from './features/components/incidence/incidence.component';
+import { FlightsDetailComponent } from './features/components/flights-detail/flights-detail.component';
 
 export const routes: Routes = [
   {
@@ -13,8 +14,8 @@ export const routes: Routes = [
     component: FlightsComponent,
   },
   {
-    path: 'flights/:id',
-    component: FlightsComponent,
+    path: 'flights-details/:id',
+    component: FlightsDetailComponent,
   },
   {
     path: 'incidence',
