@@ -44,7 +44,7 @@ export class FlightsDetailComponent implements OnInit {
   registerIncidence(): void {
     if (this.flight) {
       this.router.navigate(['/incidence'], {
-        queryParams: { id: this.flight.id },
+        queryParams: { name: this.flight.name },
       });
     }
   }

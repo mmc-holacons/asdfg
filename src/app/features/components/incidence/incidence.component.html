@@ -1,1 +1,42 @@
-<p>incidence works!</p>
+@if (flightName !== null) {
+  <div class="incidence-container">
+    <h2>Nueva incidencia - Aeronave: {{ flightName }}</h2>
+
+    <form [formGroup]="incidentForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="reference">Referencia</label>
+        <input id="reference" formControlName="reference" type="text" />
+      </div>
+
+      <div class="form-group">
+        <label for="severity">Gravedad</label>
+        <select id="severity" formControlName="severity">
+          <option [value]="null" disabled selected>Selecciona gravedad</option>
+          @for (level of severityLevels; track level) {
+            <option [value]="level">
+              {{ level }}
+            </option>
+          }
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="notes">Notas</label>
+        <textarea id="notes" formControlName="notes"></textarea>
+      </div>
+
+      <button type="submit" [disabled]="incidentForm.invalid">Enviar incidencia</button>
+    </form>
+    @if (success) {
+      <div class="success-message">
+        <p>La incidencia ha sido registrada con éxito.</p>
+      </div>
+    }
+  </div>
+} @else {
+  <div class="error-page">
+    <h2>Avión no encontrado</h2>
+    <p>No podemos generar incidencia porque no hemos podido encontrar el avión solicitado.</p>
+    <a routerLink="/flights" class="btn-back">Volver al listado de aviones</a>
+  </div>
+}
