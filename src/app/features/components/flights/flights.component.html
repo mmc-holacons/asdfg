@@ -1,0 +1,11 @@
+<div class="flights-container">
+  <h2 class="flights-title">Listado de vuelos disponibles</h2>
+  <div class="flights-grid">
+    @for (flight of flights; track flight.id) {
+      <div class="flight-card" tabindex="0" role="button" (click)="viewDetails(flight.id)" (keyup.enter)="viewDetails(flight.id)">
+        <img [src]="flight.img" [alt]="flight.name" />
+        <h3 [innerHTML]="flight.name | boldText"></h3>
+      </div>
+    }
+  </div>
+</div>
