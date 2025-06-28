@@ -1,0 +1,60 @@
+@use '../../../../styles/variables' as *;
+@use '../../../../styles/mixins' as *;
+
+.vueling-header {
+  background-color: $color-white;
+  box-shadow: $box-shadow;
+  padding: 1rem 0;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo-text {
+    cursor: pointer;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: $color-primary;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: opacity 0.3s ease;
+    font-family: $font-family-base;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  .nav-links {
+    cursor: pointer;
+    display: flex;
+    gap: 2rem;
+
+    a {
+      color: $color-secondary;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+
+  @include respond-to(sm) {
+    .logo-text {
+      font-size: 1.4rem;
+    }
+
+    .nav-links {
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+  }
+}

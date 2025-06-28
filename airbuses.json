@@ -1,0 +1,40 @@
+{
+  "airbusesInf": [
+    {
+      "id": 1,
+      "name": "A319",
+      "seatsNumber": 156,
+      "img": "../../assets/images/a319.png",
+      "icon": "airbus-icon.png",
+      "firstFlight": "1995-08-24T22:00:00.000Z",
+      "description": "Es un modelo acortado derivado del A320, con cambios mínimos. Debido a que tiene los mismos depósitos de combustible, pero menos pasajeros (124 en configuración de 2 clases, y un máximo de 156 pasajeros (en configuración sin cocinas y con 8 salidas de emergencia, en vez de las 6 salidas del A319 estándar), su alcance se ve aumentado hasta los 7200 km, el mayor de su clase. Como el A320, posee mandos de control fly-by-wire."
+    },
+    {
+      "id": 2,
+      "name": "A320",
+      "seatsNumber": 190,
+      "img": "../../assets/images/a320.png",
+      "icon": "airbus-icon.png",
+      "firstFlight": "1987-04-18T22: 00: 00.000Z",
+      "description": "La familia Airbus A320 está compuesta por aviones comerciales bimotores a reacción de pasajeros de corto y medio alcance y de fuselaje estrecho, fabricados por Airbus. La familia incluye los Airbus A318, Airbus A319, Airbus A320 y Airbus A321, así como los Airbus Executive and Private Aviation (aviones de negocio y privados). Los A320 son también nombrados A320ceo(opción de motor actual, en inglés: Current Engine Option) tras la introducción de los nuevos A320neo en 2016.4​"
+    },
+    {
+      "id": 3,
+      "name": "A321",
+      "seatsNumber": 230,
+      "img": "../../assets/images/a321.png",
+      "icon": "airbus-icon.png",
+      "firstFlight": "1993-03-11T22: 00: 00.000Z",
+      "description": "El Airbus A321 es un avión civil de pasajeros de fuselaje estrecho fabricado por Airbus desde 1993. Es una versión alargada del A320, con cambios mínimos. La superficie alar se ha aumentado ligeramente y el tren de aterrizaje se ha reforzado. Utiliza para su propulsión dos motores CFM56 o V2500."
+    },
+    {
+      "id": 4,
+      "name": "A330",
+      "seatsNumber": 335,
+      "img": "../../assets/images/a330.png",
+      "icon": "airbus-icon.png",
+      "firstFlight": "1992-011-02T22: 00: 00.000Z",
+      "description": "El Airbus A330 es un avión comercial a reacción, bimotor y de fuselaje ancho, desarrollado por Airbus SAS, una empresa francesa actualmente propiedad de la corporación europea Airbus SE. Las distintas versiones del A330 tienen un alcance que va desde los 7400 a los 13 430 km y capacidad para acomodar hasta 335 pasajeros en una configuración de dos clases, o transportar hasta 70 toneladas de carga. El avión es ensamblado por Airbus Operations SAS en Colomiers (Francia) y por Airbus Tianjin en Tianjin (China)."
+    }
+  ]
+}
