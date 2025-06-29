@@ -1,0 +1,123 @@
+@use './variables' as *;
+@use './mixins' as *;
+@use 'sass:color';
+
+// TITULARES
+h1 {
+  font-size: 2rem;
+  color: $color-primary;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  text-align: center;
+  color: $color-secondary;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+// FORMULARIOS
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: $color-secondary;
+  }
+
+  input,
+  select,
+  textarea {
+    font-family: $font-family-base;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border: 1px solid $color-secondary;
+    border-radius: $border-radius;
+    background-color: $color-background;
+    resize: vertical;
+
+    &:focus {
+      outline: none;
+      border-color: $color-primary;
+      background-color: color.adjust($color-background, $lightness: 5%);
+    }
+  }
+
+  textarea {
+    min-height: 100px;
+  }
+}
+
+// BOTONES
+.btn {
+  @include button-base();
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+
+  &--primary {
+    @include button-base($color-primary, $color-black);
+  }
+
+  &--secondary {
+    @include button-base($color-secondary, $color-white);
+  }
+
+  &--success {
+    @include button-base($color-success, $color-white);
+  }
+}
+
+.success-message,
+.error-page {
+  text-align: center;
+  padding: 1rem 2rem;
+  margin-top: 2rem;
+  border-radius: $border-radius;
+  font-family: $font-family-base;
+  font-weight: 600;
+
+  p {
+    margin: 0;
+    font-size: 1rem;
+  }
+}
+
+// TARJETAS
+.card {
+  background-color: $color-white;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  overflow: hidden;
+}
+
+// MENSAJES DE ÉXITO Y ERROR
+.success-message {
+  border: 1px solid $color-success;
+  background-color: color.adjust($color-success, $lightness: 40%);
+  color: $color-success;
+}
+
+.error-page {
+  background-color: $color-background;
+  border: 1px solid $color-error;
+  color: $color-secondary;
+
+  h2 {
+    font-size: 1.5rem;
+    color: $color-error;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin-bottom: 2rem;
+  }
+}

@@ -1,0 +1,21 @@
+@use '../../../../styles/variables' as *;
+@use '../../../../styles/mixins' as *;
+
+.app-footer {
+  background-color: $color-secondary;
+  color: $color-white;
+  padding: 1rem 2rem;
+  text-align: center;
+  font-family: $font-family-base;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    p {
+      margin: 0.3rem 0;
+    }
+  }
+}

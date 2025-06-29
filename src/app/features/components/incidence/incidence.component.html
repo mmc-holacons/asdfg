@@ -2,7 +2,7 @@
   <div class="incidence-container">
     <h2>Nueva incidencia - Aeronave: {{ flightName }}</h2>
 
-    <form [formGroup]="incidentForm" (ngSubmit)="onSubmit()">
+    <form class="form" [formGroup]="incidentForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="reference">Referencia</label>
         <input id="reference" formControlName="reference" type="text" />
@@ -13,9 +13,7 @@
         <select id="severity" formControlName="severity">
           <option [value]="null" disabled selected>Selecciona gravedad</option>
           @for (level of severityLevels; track level) {
-            <option [value]="level">
-              {{ level }}
-            </option>
+            <option [value]="level">{{ level }}</option>
           }
         </select>
       </div>
@@ -25,8 +23,9 @@
         <textarea id="notes" formControlName="notes"></textarea>
       </div>
 
-      <button type="submit" [disabled]="incidentForm.invalid">Enviar incidencia</button>
+      <button type="submit" class="btn btn--primary" [disabled]="incidentForm.invalid">Enviar incidencia</button>
     </form>
+
     @if (success) {
       <div class="success-message">
         <p>La incidencia ha sido registrada con éxito.</p>

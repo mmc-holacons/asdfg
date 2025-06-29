@@ -8,16 +8,11 @@
   background-color: $color-white;
   border-radius: $border-radius;
   box-shadow: $box-shadow;
-  font-family: $font-family-base;
 }
 
 .header-actions {
   text-align: right;
   margin-bottom: 1rem;
-
-  .incidence-button {
-    @include button-base($color-primary, $color-black);
-  }
 }
 
 .flight-image {
@@ -43,7 +38,6 @@
   }
 
   .toggle-description {
-    @include button-base($color-secondary, $color-white);
     margin-top: 1rem;
   }
 
@@ -51,32 +45,5 @@
     margin-top: 1rem;
     line-height: $line-height-base;
     color: $color-black;
-  }
-}
-
-.no-flight {
-  text-align: center;
-  padding: 3rem 1rem;
-  background-color: $color-background;
-  border: 1px solid $color-error;
-  border-radius: $border-radius;
-  color: $color-secondary;
-
-  h2 {
-    font-size: 1.5rem;
-    color: $color-error;
-    margin-bottom: 1rem;
-  }
-
-  p {
-    margin-bottom: 2rem;
-  }
-
-  .btn-back {
-    @include button-base($color-secondary, $color-white);
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 1rem;
-    cursor: pointer;
   }
 }

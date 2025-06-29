@@ -1,32 +1,34 @@
 @if (flight) {
   <div class="flight-details-container">
     <div class="header-actions">
-      <button class="incidence-button" (click)="registerIncidence()">Registrar incidencia</button>
+      <button class="btn btn--primary" (click)="registerIncidence()">Registrar incidencia</button>
     </div>
+
     <div class="flight-image">
       <img [src]="flight.img" [alt]="flight.name" />
     </div>
+
     <div class="flight-info">
       <p><strong>Modelo:</strong> <span [innerHTML]="flight.name | boldText"></span></p>
       <p><strong>Plazas:</strong> {{ flight.seatsNumber }}</p>
       <p><strong>Primer vuelo:</strong> {{ flight.firstFlight | formatDate }}</p>
 
-      <button class="toggle-description" (click)="showDescription = !showDescription">
+      <button class="btn btn--secondary toggle-description" (click)="showDescription = !showDescription">
         {{ showDescription ? 'Leer menos' : 'Leer más' }}
       </button>
+
       @if (showDescription) {
-        @if (flight.description !== null && flight.description !== '') {
-          <p class="description">{{ flight.description }}</p>
-        } @else {
-          <p class="description">No hay descripción disponible.</p>
-        }
+        <p class="description">
+          {{ flight.description || 'No hay descripción disponible.' }}
+        </p>
       }
     </div>
   </div>
 } @else {
-  <div class="no-flight">
+  <div class="error-page">
     <h2>Avión no encontrado</h2>
     <p>No hemos podido encontrar la información del avión solicitado.</p>
-    <a routerLink="/flights" class="btn-back">Volver al listado de aviones</a>
+    <a routerLink="/flights" class="btn btn--secondary">Volver al listado de aviones</a>
   </div>
 }
+
